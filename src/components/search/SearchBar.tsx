@@ -1,6 +1,7 @@
 import { Box, Divider, Flex, PseudoBox, Text } from '@chakra-ui/core';
 import React from 'react';
 
+import { TCityName } from '../../modelsData/models';
 import SearchIcon from '../icons/SearchIcon';
 
 const BtnDivider = () => (
@@ -11,7 +12,7 @@ const someStyles = { px: 5, py: 4 };
 
 export interface SearchBarCompProps {
   openSearch: () => void;
-  city: string;
+  city: TCityName;
 }
 
 const SearchBar: React.FC<SearchBarCompProps> = ({ openSearch, city }) => (

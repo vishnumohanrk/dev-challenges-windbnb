@@ -7,13 +7,13 @@ import SearchBar from '../src/components/search/SearchBar';
 import SearchDrawer from '../src/components/search/SearchDrawer';
 import BaseLayout from '../src/layouts/BaseLayout';
 import { fullData } from '../src/modelsData/data';
-import { TCityName, TSetCity } from '../src/modelsData/models';
+import { IStayData, TCityName, TSetCity } from '../src/modelsData/models';
 
 const App: React.FC = () => {
   const { isOpen: isDrawerOpen, onClose: onDrawerClose, onOpen: onDrawerOpen } = useDisclosure();
 
   const [city, setCity] = useState<TCityName>('Helsinki, Finland');
-  const [viewData, setViewData] = useState(fullData);
+  const [viewData, setViewData] = useState<IStayData[]>(fullData);
 
   const handleCitySelection: TSetCity = value => setCity(value);
 
