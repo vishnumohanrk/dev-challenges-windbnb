@@ -9,3 +9,5 @@ export interface IStayData {
   beds: number;
   photo: string;
 }
+
+export type TCityName = 'Helsinki, Finland' | 'Turku, Finland' | 'Vaasa, Finland' | 'Oulu, Finland';
