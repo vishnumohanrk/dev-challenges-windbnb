@@ -38,7 +38,7 @@ const SearchBar: React.FC<SearchBarCompProps> = ({ openSearch, city }) => (
         Add Guests
       </Text>
       <BtnDivider />
-      <Box px={5} color="rgba(235, 87, 87, 0.9);">
+      <Box color="rgba(235, 87, 87, 0.9);" px={5}>
         <SearchIcon />
       </Box>
     </PseudoBox>

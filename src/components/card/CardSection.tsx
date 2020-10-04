@@ -1,13 +1,18 @@
 import { Flex } from '@chakra-ui/core';
 import React from 'react';
 
-import { IStayData } from '../../modelsData/models';
+import { IStayData, TCityName } from '../../modelsData/models';
 import CardItem from './CardItem';
 import CardsSectionHeading from './CardSectionHeading';
 
-const CardSection: React.FC<{ data: IStayData[] }> = ({ data }) => (
+export interface CardSectionCompProps {
+  data: IStayData[];
+  city: TCityName;
+}
+
+const CardSection: React.FC<CardSectionCompProps> = ({ data, city }) => (
   <Flex as="section" flexDirection={['column']}>
-    <CardsSectionHeading />
+    <CardsSectionHeading city={city} />
     {data.map(i => (
       <CardItem key={i.title} {...i} />
     ))}

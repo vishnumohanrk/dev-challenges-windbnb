@@ -11,36 +11,34 @@ import {
 import React from 'react';
 
 import { cities } from '../../modelsData/data';
+import { TSetCity } from '../../modelsData/models';
 import CityBtn from './CityBtn';
-import ShadowBox from './ShadowBox';
 
-export interface DrawerCompProps {
+export interface SearchDrawerCompProps {
+  changeCity: TSetCity;
   isOpen: boolean;
-  closeSearch: () => void;
+  onClose: () => void;
 }
 
-const SearchDrawer: React.FC<DrawerCompProps> = ({ isOpen, closeSearch }) => {
-  return (
-    <Drawer placement="top" onClose={closeSearch} isOpen={isOpen} blockScrollOnMount={false}>
-      <DrawerOverlay />
-      <DrawerContent>
-        <DrawerCloseButton />
-        <DrawerHeader borderBottomWidth="1px">
-          <Text fontSize={['lg']} fontWeight={['bold']}>
-            Edit Your Search
-          </Text>
-        </DrawerHeader>
-        <DrawerBody>
-          <ShadowBox />
-          <Flex flexDirection="column">
-            {cities.map(i => (
-              <CityBtn name={i} handleClick={() => console.log()} key={i} />
-            ))}
-          </Flex>
-        </DrawerBody>
-      </DrawerContent>
-    </Drawer>
-  );
-};
+const SearchDrawer: React.FC<SearchDrawerCompProps> = ({ changeCity, isOpen, onClose }) => (
+  <Drawer isOpen={isOpen} placement="top" onClose={onClose} blockScrollOnMount={false}>
+    <DrawerOverlay />
+    <DrawerContent>
+      <DrawerHeader d="flex" justifyContent="space-between" alignItems="center">
+        <Text color="#333333" fontWeight={['semibold']}>
+          Choose City
+        </Text>
+        <DrawerCloseButton position="static" />
+      </DrawerHeader>
+      <DrawerBody>
+        <Flex flexDirection="column">
+          {cities.map(i => (
+            <CityBtn name={i} handleClick={changeCity} key={i} />
+          ))}
+        </Flex>
+      </DrawerBody>
+    </DrawerContent>
+  </Drawer>
+);
 
 export default SearchDrawer;

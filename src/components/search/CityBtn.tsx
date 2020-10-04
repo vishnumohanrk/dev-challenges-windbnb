@@ -1,11 +1,11 @@
 import { Box, Button, Text } from '@chakra-ui/core';
 import React from 'react';
 
-import { TCityName } from '../../modelsData/models';
+import { TCityName, TSetCity } from '../../modelsData/models';
 import LocationIcon from '../icons/LocationIcon';
 
 export interface CityBtnCompProps {
-  handleClick: (name: TCityName) => void;
+  handleClick: TSetCity;
   name: TCityName;
 }
 
@@ -22,7 +22,7 @@ const CityBtn: React.FC<CityBtnCompProps> = ({ handleClick, name }) => (
     <Box color="#4F4F4F" mr={2}>
       <LocationIcon />
     </Box>
-    <Text color="#4F4F4F" fontSize={['xl']} fontWeight={['semibold']}>
+    <Text color="#4F4F4F" fontSize={['lg']} fontWeight={['normal']}>
       {name}
     </Text>
   </Button>

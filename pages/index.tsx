@@ -7,13 +7,15 @@ import SearchBar from '../src/components/search/SearchBar';
 import SearchDrawer from '../src/components/search/SearchDrawer';
 import BaseLayout from '../src/layouts/BaseLayout';
 import { fullData } from '../src/modelsData/data';
-import { TCityName } from '../src/modelsData/models';
+import { TCityName, TSetCity } from '../src/modelsData/models';
 
 const App: React.FC = () => {
   const { isOpen: isDrawerOpen, onClose: onDrawerClose, onOpen: onDrawerOpen } = useDisclosure();
 
   const [city, setCity] = useState<TCityName>('Helsinki, Finland');
   const [viewData, setViewData] = useState(fullData);
+
+  const handleCitySelection: TSetCity = value => setCity(value);
 
   useEffect(() => {
     setViewData(fullData.filter(i => `${i.city}, ${i.country}` === city));
@@ -23,8 +25,12 @@ const App: React.FC = () => {
     <BaseLayout>
       <Header />
       <SearchBar city={city} openSearch={onDrawerOpen} />
-      <SearchDrawer isOpen={isDrawerOpen} closeSearch={onDrawerClose} />
-      <CardSection data={viewData} />
+      <SearchDrawer
+        changeCity={handleCitySelection}
+        isOpen={isDrawerOpen}
+        onClose={onDrawerClose}
+      />
+      <CardSection city={city} data={viewData} />
     </BaseLayout>
   );
 };

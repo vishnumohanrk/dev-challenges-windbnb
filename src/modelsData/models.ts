@@ -11,3 +11,5 @@ export interface IStayData {
 }
 
 export type TCityName = 'Helsinki, Finland' | 'Turku, Finland' | 'Vaasa, Finland' | 'Oulu, Finland';
+
+export type TSetCity = (value: TCityName) => void;
