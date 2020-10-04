@@ -1,4 +1,4 @@
-import { useDisclosure } from '@chakra-ui/core';
+import { Box, useDisclosure } from '@chakra-ui/core';
 import React, { useEffect, useState } from 'react';
 
 import CardSection from '../src/components/card/CardSection';
@@ -23,8 +23,17 @@ const App: React.FC = () => {
 
   return (
     <BaseLayout>
-      <Header />
-      <SearchBar city={city} openSearch={onDrawerOpen} />
+      <Box
+        as="header"
+        d={{ base: 'block', md: 'flex' }}
+        justifyContent="space-between"
+        alignItems="center"
+        mt={{ md: 3 }}
+        mb={{ base: 8, md: 10 }}
+      >
+        <Header />
+        <SearchBar city={city} openSearch={onDrawerOpen} />
+      </Box>
       <SearchDrawer
         changeCity={handleCitySelection}
         isOpen={isDrawerOpen}

@@ -31,7 +31,7 @@ const SearchDrawer: React.FC<SearchDrawerCompProps> = ({ changeCity, isOpen, onC
         <DrawerCloseButton position="static" />
       </DrawerHeader>
       <DrawerBody>
-        <Flex flexDirection="column">
+        <Flex flexDirection="column" mb={8}>
           {cities.map(i => (
             <CityBtn name={i} handleClick={changeCity} key={i} />
           ))}

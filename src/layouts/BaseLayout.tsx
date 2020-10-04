@@ -6,7 +6,7 @@ export interface BaseLayoutCompProps {
 }
 
 const BaseLayout: React.FC<BaseLayoutCompProps> = ({ children }) => (
-  <Flex p={4} maxW="lg" minH="100vh" mx="auto">
+  <Flex py={4} px={{ base: 4, xl: 0 }} maxW="1280px" minH="100vh" mx="auto">
     <Box as="main" w="100%">
       {children}
     </Box>

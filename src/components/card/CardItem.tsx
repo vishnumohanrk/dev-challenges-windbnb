@@ -8,12 +8,17 @@ const CardItem: React.FC<IStayData> = props => {
   const { beds, photo, rating, superHost, title, type } = props;
 
   return (
-    <Flex flexDirection="column" mb={8}>
+    <Flex
+      flexDirection="column"
+      mb={8}
+      mx={{ sm: 'auto', md: 0 }}
+      w={{ base: '100%', sm: '80%', md: '48%', lg: '32%' }}
+    >
       <Image
         src={photo}
         alt={title}
         w="100%"
-        h="16rem"
+        h={{ base: '16rem', lg: '14rem', xl: '16rem' }}
         objectFit="cover"
         borderRadius="24px"
         mb={3}

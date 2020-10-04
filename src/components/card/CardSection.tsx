@@ -11,7 +11,12 @@ export interface CardSectionCompProps {
 }
 
 const CardSection: React.FC<CardSectionCompProps> = ({ data, city }) => (
-  <Flex as="section" flexDirection={['column']}>
+  <Flex
+    as="section"
+    flexDirection={{ base: 'column', md: 'row' }}
+    justifyContent={{ md: 'space-between' }}
+    flexWrap={{ md: 'wrap' }}
+  >
     <CardsSectionHeading city={city} />
     {data.map(i => (
       <CardItem key={i.title} {...i} />

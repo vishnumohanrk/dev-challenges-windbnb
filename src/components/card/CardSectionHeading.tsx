@@ -4,7 +4,12 @@ import React from 'react';
 import { TCityName } from '../../modelsData/models';
 
 const CardsSectionHeading: React.FC<{ city: TCityName }> = ({ city }) => (
-  <Flex justify="space-between" align="center" mb={6}>
+  <Flex
+    justify={{ base: 'space-between', sm: 'space-around', md: 'space-between' }}
+    align="center"
+    mb={6}
+    w="100%"
+  >
     <Text fontWeight={['bold']} fontSize={['xl']} color="black">
       Stays in {city}
     </Text>
