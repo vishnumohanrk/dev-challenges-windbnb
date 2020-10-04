@@ -21,7 +21,7 @@ export interface SearchDrawerCompProps {
 }
 
 const SearchDrawer: React.FC<SearchDrawerCompProps> = ({ changeCity, isOpen, onClose }) => (
-  <Drawer isOpen={isOpen} placement="top" onClose={onClose} blockScrollOnMount={false}>
+  <Drawer isOpen={isOpen} onClose={onClose} placement="top" blockScrollOnMount={false}>
     <DrawerOverlay />
     <DrawerContent>
       <DrawerHeader d="flex" justifyContent="space-between" alignItems="center">

@@ -7,6 +7,8 @@ const BtnDivider = () => (
   <Divider h="100%" m={0} orientation="vertical" borderWidth="3px" borderColor="#F2F2F2" />
 );
 
+const someStyles = { px: 5, py: 4 };
+
 export interface SearchBarCompProps {
   openSearch: () => void;
   city: string;
@@ -19,7 +21,6 @@ const SearchBar: React.FC<SearchBarCompProps> = ({ openSearch, city }) => (
       aria-label="Search"
       d="flex"
       alignItems="center"
-      py={4}
       pr={1}
       borderRadius="16px"
       bg="white"
@@ -30,15 +31,15 @@ const SearchBar: React.FC<SearchBarCompProps> = ({ openSearch, city }) => (
       }}
       onClick={openSearch}
     >
-      <Text color="black" px={5} fontWeight={['medium']}>
+      <Text {...someStyles} color="black" fontWeight={['medium']}>
         {city}
       </Text>
       <BtnDivider />
-      <Text color="#BDBDBD" px={5}>
+      <Text {...someStyles} color="#BDBDBD">
         Add Guests
       </Text>
       <BtnDivider />
-      <Box color="rgba(235, 87, 87, 0.9);" px={5}>
+      <Box {...someStyles} color="rgba(235, 87, 87, 0.9);">
         <SearchIcon />
       </Box>
     </PseudoBox>
