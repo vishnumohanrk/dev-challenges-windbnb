@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import CardSection from '../src/components/CardSection';
+import CardSection from '../src/components/card/CardSection';
 import Header from '../src/components/Header';
 import BaseLayout from '../src/layouts/BaseLayout';
 import { fullData } from '../src/modelsData/data';

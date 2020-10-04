@@ -1,7 +1,7 @@
 import { Flex } from '@chakra-ui/core';
 import React from 'react';
 
-import { IStayData } from '../modelsData/models';
+import { IStayData } from '../../modelsData/models';
 import CardItem from './CardItem';
 import CardsSectionHeading from './CardSectionHeading';
 

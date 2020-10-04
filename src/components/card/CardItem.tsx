@@ -1,8 +1,8 @@
 import { Box, Flex, Image, Text } from '@chakra-ui/core';
 import React from 'react';
 
-import { IStayData } from '../modelsData/models';
-import StarIcon from './StarIcon';
+import { IStayData } from '../../modelsData/models';
+import StarIcon from '../icons/StarIcon';
 
 const CardItem: React.FC<IStayData> = props => {
   const { beds, photo, rating, superHost, title, type } = props;
