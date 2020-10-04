@@ -1,19 +1,10 @@
-import { Flex, IconButton, Text, useColorMode } from '@chakra-ui/core';
+import { Flex, Image } from '@chakra-ui/core';
 import React from 'react';
 
-const Header: React.FC = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
-
-  const icon: 'sun' | 'moon' = colorMode === 'dark' ? 'sun' : 'moon';
-
-  return (
-    <Flex as="header" alignItems="center" justifyContent="space-between">
-      <Text as="h1" fontSize={['lg']} fontWeight={['semibold']}>
-        Hello
-      </Text>
-      <IconButton aria-label="Theme Toggle" icon={icon} onClick={toggleColorMode} />
-    </Flex>
-  );
-};
+const Header: React.FC = () => (
+  <Flex as="header" mb={5} w="40%">
+    <Image src="/logoIMG.png" w="100%" alt="logo" />
+  </Flex>
+);
 
 export default Header;

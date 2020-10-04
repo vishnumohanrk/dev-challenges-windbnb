@@ -1,15 +1,17 @@
-import { Box } from '@chakra-ui/core';
-import React from 'react';
+import React, { useState } from 'react';
 
+import CardSection from '../src/components/CardSection';
 import Header from '../src/components/Header';
 import BaseLayout from '../src/layouts/BaseLayout';
+import { fullData } from '../src/modelsData/data';
 
 const App: React.FC = () => {
+  const [viewData] = useState(fullData);
+
   return (
     <BaseLayout>
-      <Box as="main" w="100%">
-        <Header />
-      </Box>
+      <Header />
+      <CardSection data={viewData} />
     </BaseLayout>
   );
 };
