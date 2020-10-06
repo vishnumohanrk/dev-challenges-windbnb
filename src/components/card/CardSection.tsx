@@ -8,16 +8,17 @@ import CardsSectionHeading from './CardSectionHeading';
 export interface CardSectionCompProps {
   data: IStayData[];
   city: TCityName;
+  staysCount: number;
 }
 
-const CardSection: React.FC<CardSectionCompProps> = ({ data, city }) => (
+const CardSection: React.FC<CardSectionCompProps> = ({ data, city, staysCount }) => (
   <Flex
     as="section"
     flexDirection={{ base: 'column', md: 'row' }}
     justifyContent={{ md: 'space-between' }}
     flexWrap={{ md: 'wrap' }}
   >
-    <CardsSectionHeading city={city} />
+    <CardsSectionHeading staysCount={staysCount} city={city} />
     {data.map(i => (
       <CardItem key={i.title} {...i} />
     ))}

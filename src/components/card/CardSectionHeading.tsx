@@ -3,7 +3,12 @@ import React from 'react';
 
 import { TCityName } from '../../modelsData/models';
 
-const CardsSectionHeading: React.FC<{ city: TCityName }> = ({ city }) => (
+export interface CardsSectionHeadingCompProps {
+  city: TCityName;
+  staysCount: number;
+}
+
+const CardsSectionHeading: React.FC<CardsSectionHeadingCompProps> = ({ city, staysCount }) => (
   <Flex
     justify={{ base: 'space-between', sm: 'space-around', md: 'space-between' }}
     align="center"
@@ -14,7 +19,7 @@ const CardsSectionHeading: React.FC<{ city: TCityName }> = ({ city }) => (
       Stays in {city}
     </Text>
     <Text fontWeight={['medium']} fontSize={['base']} color="#4F4F4F">
-      12+ stays
+      {staysCount} stays
     </Text>
   </Flex>
 );
